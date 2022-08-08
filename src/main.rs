@@ -73,12 +73,66 @@ fn main() {
     }
 
 
-    let mut line = String::new();
-   println!("Enter your name :");
-   let b1 = std::io::stdin().read_line(&mut line).unwrap();
-   print!("Hello , {}", line);
-   println!("no of bytes read , {}", b1);
+//     let mut line = String::new();
+//    println!("Enter your name :");
+//    let b1 = std::io::stdin().read_line(&mut line).unwrap();
+//    print!("Hello , {}", line);
+//    println!("no of bytes read , {}", b1);
+
+    let tup = (15,"ege",25.5,false,"e");
+
+    let (a,b,c,d,e) = tup;
+
+    println!("a is {}",a);
+    println!("b is {}",b);
+    println!("c is {}",c);
+    println!("d is {}",d);
+    println!("e is {}",e);
+
+    
+    print_numbers_to(50);
+
+
+
+     let fullname = " Tutorials Point \r\n";
+     println!("Before trim {}",fullname);
+
+     println!("length is {}",fullname.len());
+     println!();
+     println!("After trim  {}",fullname);
+     println!("length is {}",fullname.trim().len());
+     println!("After trim  {}",fullname);
+
+
+     let msg = "Tutorials Point has good tutorials".to_string();
+     let mut i = 1;
+     
+     for token in msg.split_whitespace(){
+        println!("token {} {}",i,token);
+        i+=1;
+     }
+
+
 }
+
+
+
+fn print_numbers_to(num: u32){
+    for c in 1..num{
+        if is_even(c){
+            println!("{} is even",c);
+        }
+        else{
+            println!("{} is odd",c);
+        }
+    }
+}
+
+
+fn is_even(num: u32) -> bool {
+    return num%2==0;
+}
+
 
 enum Gunler{
 
